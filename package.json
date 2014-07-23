@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "grunt test",
-    "coveralls": "node_modules/jscoverage/bin/jscoverage lib lib-cov && JAVASCRIPT_COV=1 node_modules/nodeunit/bin/nodeunit --reporter=lcov test | coveralls"
+    "coveralls": "jscoverage lib lib-cov && JAVASCRIPT_COV=1 nodeunit --reporter=lcov test | coveralls"
   },
   "author": "David Tucker",
   "license": "MIT",
