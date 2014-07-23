@@ -35,6 +35,20 @@ exports.linkedList = {
     test.done();
   },
 
+  doesReturnNullWhenRemovingOutOfUpperBounds: function(test) {
+    var list = createBasicList();
+    var removed = list.remove(8);
+    test.strictEqual(null, removed, 'List returned non-null value when removing out of upper range index');
+    test.done();
+  },
+
+  doesReturnNullWhenRemovingOutOfLowerBounds: function(test) {
+    var list = createBasicList();
+    var removed = list.remove(-1);
+    test.strictEqual(null, removed, 'List returned non-null value when removing out of lower range index');
+    test.done();
+  },
+
   doesGiveCorrectLength: function(test) {
     var list = createBasicList();
     test.strictEqual(5, list.length(), 'List did not return proper length');
@@ -48,6 +62,14 @@ exports.linkedList = {
     var removed = list.remove(0);
     test.strictEqual("David", removed, 'List did not return proper initial item when it was removed from list');
     test.strictEqual("Tucker", list.itemAtIndex(0), 'List did not return proper initial item when first item was removed');
+    test.done();
+  },
+
+  doesProperlyRemoveMiddleObject: function(test) {
+    var list = createBasicList();
+    var removed = list.remove(2);
+    test.strictEqual(2, removed, 'List did not return proper middle item when it was removed from list');
+    test.strictEqual(4, list.length(), 'List did not return proper length after middle item was removed');
     test.done();
   },
 
