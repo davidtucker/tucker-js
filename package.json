@@ -14,6 +14,7 @@
     "grunt-contrib-nodeunit": "~0.4.1",
     "grunt-contrib-jshint": "~0.10.0",
     "nodeunit": "~0.9.0",
-    "jscoverage": "~0.5.5"
+    "jscoverage": "~0.5.5",
+    "coveralls": "~2.11.1"
   }
 }
