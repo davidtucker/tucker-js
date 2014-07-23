@@ -8,11 +8,25 @@ module.exports = function(grunt) {
     },
     jshint: {
       all: ['Gruntfile.js', 'index.js', 'lib/**/*.js', 'test/**/*.js']
+    },
+    jsdoc : {
+        dist : {
+            src: ['lib/*.js'], 
+            options: {
+                destination: 'doc'
+            }
+        }
+    },
+    clean: {
+        doc: [ "doc" ]
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-nodeunit');
+  grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-jsdoc');
   grunt.registerTask('test', [ 'jshint', 'nodeunit' ]);
+  grunt.registerTask('doc', ['clean:doc', 'jsdoc' ]);
 
 };
