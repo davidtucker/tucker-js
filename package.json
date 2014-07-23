@@ -1,0 +1,18 @@
+{
+  "name": "tucker-js",
+  "version": "0.0.1",
+  "description": "These are JavaScript equivalents to common data types and algorithms",
+  "main": "index.js",
+  "scripts": {
+    "test": "grunt test",
+    "coveralls": "node_modules/jscoverage/bin/jscoverage lib lib-cov && JAVASCRIPT_COV=1 node_modules/nodeunit/bin/nodeunit --reporter=lcov test | coveralls"
+  },
+  "author": "David Tucker",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-nodeunit": "~0.4.1",
+    "grunt-contrib-jshint": "~0.10.0",
+    "nodeunit": "~0.9.0"
+  }
+}
