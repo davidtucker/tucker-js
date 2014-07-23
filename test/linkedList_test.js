@@ -35,6 +35,20 @@ exports.linkedList = {
     test.done();
   },
 
+  doesReturnNullWhenFetchingItemBelowRange: function(test) {
+    var list = createBasicList();
+    var fetched = list.itemAtIndex(-1);
+    test.strictEqual(null, fetched, 'List returned non-null value when fetching value below lower range');
+    test.done();
+  },
+
+  doesReturnNullWhenFetchingItemAboveRange: function(test) {
+    var list = createBasicList();
+    var fetched = list.itemAtIndex(9);
+    test.strictEqual(null, fetched, 'List returned non-null value when fetching value above upper range');
+    test.done();
+  },
+
   doesReturnNullWhenRemovingOutOfUpperBounds: function(test) {
     var list = createBasicList();
     var removed = list.remove(8);
