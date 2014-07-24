@@ -23,7 +23,16 @@ module.exports = function(grunt) {
         }
     },
     clean: {
-        doc: [ "doc" ]
+        doc: [ 'doc' ]
+    },
+    watch: {
+        scripts: {
+            files: ['lib/**/*.js', 'test/**/*.js'],
+            tasks: ['test'],
+            options: {
+              spawn: false,
+            }
+        }
     }
   });
 
@@ -31,6 +40,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-nodeunit');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-jsdoc');
+  grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.registerTask('test', [ 'jshint', 'nodeunit' ]);
   grunt.registerTask('doc', ['clean:doc', 'jsdoc' ]);
 

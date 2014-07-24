@@ -17,6 +17,7 @@
     "jscoverage": "~0.5.5",
     "coveralls": "~2.11.1",
     "grunt-jsdoc": "~0.5.6",
-    "grunt-contrib-clean": "~0.5.0"
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-watch": "~0.6.1"
   }
 }
