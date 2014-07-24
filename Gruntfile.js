@@ -7,7 +7,12 @@ module.exports = function(grunt) {
         all: ['test/*_test.js']
     },
     jshint: {
-      all: ['Gruntfile.js', 'index.js', 'lib/**/*.js', 'test/**/*.js']
+        all: {
+            src: ['Gruntfile.js', 'index.js', 'lib/**/*.js', 'test/**/*.js'],
+            options: {
+                jshintrc: '.jshintrc',
+            }
+        }
     },
     jsdoc : {
         dist : {
