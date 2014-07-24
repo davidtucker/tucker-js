@@ -23,7 +23,8 @@ module.exports = function(grunt) {
         }
     },
     clean: {
-        doc: [ 'doc' ]
+        docs: ['doc'],
+        cov: ['lib-cov']
     },
     watch: {
         scripts: {
@@ -42,6 +43,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-jsdoc');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.registerTask('test', [ 'jshint', 'nodeunit' ]);
-  grunt.registerTask('doc', ['clean:doc', 'jsdoc' ]);
+  grunt.registerTask('docs', ['clean:docs', 'jsdoc' ]);
 
 };
